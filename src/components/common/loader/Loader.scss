@@ -1,0 +1,28 @@
+// src/components/Loader.scss
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; // Full viewport height
+    width: 100vw; // Full viewport width
+    position: fixed; // Fixed positioning to cover the whole screen
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8); // Semi-transparent background
+    z-index: 1000; // Make sure it's on top of other elements
+  }
+  
+  .spinner {
+    border: 16px solid #f3f3f3; // Light gray border
+    border-top: 16px solid #3498db; // Blue border on top
+    border-radius: 50%; // Make it a circle
+    width: 120px; // Width of the spinner
+    height: 120px; // Height of the spinner
+    animation: spin 2s linear infinite; // Animation
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

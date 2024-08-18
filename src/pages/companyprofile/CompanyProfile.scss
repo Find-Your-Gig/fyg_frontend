@@ -1,0 +1,96 @@
+.company-profile-container {
+  max-width: 700px;  // Increase the width of the profile box
+  margin: 100px auto;  // Add some margin to push it down from the navbar
+  padding: 30px;  // Increase the padding for a more spacious look
+  border: 1px solid #ccc;
+  border-radius: 10px;  // Slightly increase border radius for better aesthetics
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // Add shadow for better visual separation
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;  // Increase margin for better spacing
+}
+
+.profile-pic {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-pic img {
+  width: 70px;  // Increase profile pic size
+  height: 70px;  // Increase profile pic size
+  border-radius: 50%;
+}
+
+.profile-pic-options {
+  position: absolute;
+  top: 80px;  // Adjust position for larger profile pic
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.profile-pic-options button,
+.profile-pic-options input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-edit {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-save {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-cancel {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;  // Increase gap between fields for better readability
+}
+
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-row label {
+  font-weight: bold;
+}
+
+.profile-row input,
+.select-control {
+  width: 65%;  // Adjust width for better alignment
+  padding: 10px;  // Add padding for better input field aesthetics
+}

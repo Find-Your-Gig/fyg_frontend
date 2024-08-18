@@ -1,0 +1,125 @@
+.reservations {
+  margin-top: 60px;
+  padding: 20px;
+
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      background-color: #f0f0f0;
+      transition: background-color 0.3s ease;
+      border-radius: 5px;
+
+      &.active {
+        background-color: #007bff;
+        color: white;
+      }
+
+      &:hover {
+        background-color: #007bff;
+        color: white;
+      }
+    }
+  }
+
+  .reservations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h2 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #007bff;
+    }
+
+    .no-reservations {
+      color: #6c757d;
+      font-size: 16px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .reservation {
+      padding: 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+
+      .profile-picture {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #007bff;
+      }
+
+      .reservation-details {
+        display: flex;
+        flex-direction: column;
+
+        h3 {
+          margin-top: 0;
+          margin-bottom: 10px;
+          font-size: 20px;
+        }
+
+        p {
+          margin: 5px 0;
+          font-size: 16px;
+        }
+
+        .payment-section {
+          margin-top: 10px;
+
+          button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #ffc107;
+            color: white;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+
+            &:hover {
+              background-color: #e0a800;
+            }
+          }
+        }
+
+        .cancel-section {
+          margin-top: 10px;
+
+          button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #dc3545;
+            color: white;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+
+            &:hover {
+              background-color: #c82333;
+            }
+          }
+        }
+      }
+    }
+  }
+}

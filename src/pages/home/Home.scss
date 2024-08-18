@@ -1,0 +1,35 @@
+#cta-section {
+    margin-top: 50px;
+    background-image: url('../../images/landingPage.jpeg'); // Replace with your image path
+    background-size: cover;
+    background-position: center;
+    height: 120vh; // Increased height for more vertical space
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  
+    .cta-content {
+      text-align: center;
+      position: absolute;
+      bottom: 20px; // Adjust this value to position the buttons below the image
+  
+      .cta-button {
+        display: inline-block;
+        margin: 10px;
+        padding: 15px 30px;
+        font-size: 18px;
+        color: #fff;
+        background-color: #007bff; // Button background color
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #0056b3; // Button hover color
+        }
+      }
+    }
+  }
+  
