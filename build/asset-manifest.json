@@ -1,15 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.e2d2e491.css",
-    "main.js": "/static/js/main.722f9679.js",
-    "static/js/787.0b5b94e2.chunk.js": "/static/js/787.0b5b94e2.chunk.js",
-    "index.html": "/index.html",
-    "main.e2d2e491.css.map": "/static/css/main.e2d2e491.css.map",
-    "main.722f9679.js.map": "/static/js/main.722f9679.js.map",
-    "787.0b5b94e2.chunk.js.map": "/static/js/787.0b5b94e2.chunk.js.map"
+    "main.css": "/fyg_frontend/static/css/main.b480c0c0.css",
+    "main.js": "/fyg_frontend/static/js/main.0a869122.js",
+    "static/js/787.0b5b94e2.chunk.js": "/fyg_frontend/static/js/787.0b5b94e2.chunk.js",
+    "static/media/landingPage.jpeg": "/fyg_frontend/static/media/landingPage.709785ff080a4ae69373.jpeg",
+    "static/media/landingPageSports.jpeg": "/fyg_frontend/static/media/landingPageSports.250344373bc38c04b4ac.jpeg",
+    "static/media/sliderBackground.jpg": "/fyg_frontend/static/media/sliderBackground.57f859d62ebb9202551c.jpg",
+    "static/media/landingPageMusic.jpeg": "/fyg_frontend/static/media/landingPageMusic.ae02c2e426f96533cf47.jpeg",
+    "static/media/landingPageDance.jpeg": "/fyg_frontend/static/media/landingPageDance.86065351be56ea316c97.jpeg",
+    "index.html": "/fyg_frontend/index.html",
+    "main.b480c0c0.css.map": "/fyg_frontend/static/css/main.b480c0c0.css.map",
+    "main.0a869122.js.map": "/fyg_frontend/static/js/main.0a869122.js.map",
+    "787.0b5b94e2.chunk.js.map": "/fyg_frontend/static/js/787.0b5b94e2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2d2e491.css",
-    "static/js/main.722f9679.js"
+    "static/css/main.b480c0c0.css",
+    "static/js/main.0a869122.js"
   ]
 }
