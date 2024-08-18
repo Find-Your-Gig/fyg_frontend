@@ -12,6 +12,7 @@ import commonContext from '../../contexts/common/commonContext';
 import Loader from '../../components/common/loader/Loader';
 import { useLocation } from 'react-router-dom';
 import ReservationForm from '../../components/form/reservationdetails/ReservationForm';
+import { BASEURL } from '../../util/Util';
 
 const ArtistProfile = () => {
   const { loginResponse, setLoading, loading, setArtistDetails } = useContext(commonContext);
@@ -47,7 +48,7 @@ const ArtistProfile = () => {
   const fetchArtistDetails = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/artist/user/${userIdParam}`
+        `${BASEURL}/artist/user/${userIdParam}`
       );
       if (response.data.success) {
         setArtist(response.data.artists[0]);

@@ -8,6 +8,7 @@ import TopProducts from '../../components/product/TopProducts';
 import Services from '../../components/common/Services';
 import commonContext from '../../contexts/common/commonContext';
 import Loader from '../../components/common/loader/Loader';
+import { BASEURL } from '../../util/Util';
 const _ = require("lodash");
 
 const Home = () => {
@@ -23,7 +24,7 @@ const Home = () => {
 
     const fetchLandingPageData = async () => {
         try {
-            const response = await axios.get(`http://localhost:8080/api/common/landingPageData`);
+            const response = await axios.get(`${BASEURL}/common/landingPageData`);
             if (response.data.success) {
                 setArtists(response.data.artists);
                 setLocations(response.data.locations);

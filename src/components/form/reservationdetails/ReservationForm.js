@@ -51,7 +51,7 @@ const ReservationForm = ({ show, handleClose }) => {
     };
 
     try {
-      const response = await fetch('http://localhost:8080/api/reservation/makeReservation', {
+      const response = await fetch('${BASEURL}/reservation/makeReservation', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

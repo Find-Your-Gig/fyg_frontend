@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
 import './ArtistDetailsForm.scss'; // Ensure this path is correct
+import { BASEURL } from '../../../util/Util';
 
 const Step1 = ({ formData, handleChange }) => {
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/common/locations')
+    axios.get(`${BASEURL}/common/locations`)
       .then(response => {
         setLocations(response.data.map(location => ({ value: location, label: location })));
       })

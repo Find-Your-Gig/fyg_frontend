@@ -7,6 +7,7 @@ import Step4 from './Step4';
 import Step5 from './Step5';
 import './ArtistDetailsForm.scss';
 import commonContext from '../../../contexts/common/commonContext';
+import { BASEURL } from '../../../util/Util';
 
 const ArtistDetailsForm = () => {
   const { loginResponse, setArtistDetails } = useContext(commonContext);
@@ -50,7 +51,7 @@ const ArtistDetailsForm = () => {
 
   const handleFinish = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/artist', {
+      const response = await fetch(`${BASEURL}/artist`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

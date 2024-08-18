@@ -4,6 +4,7 @@ import Select from 'react-select';
 import axios from 'axios';
 import './CompanyDetailsForm.scss';
 import commonContext from '../../../contexts/common/commonContext';
+import { BASEURL } from '../../../util/Util';
 
 const CompanyDetailsForm = () => {
   const { loginResponse, setCompanyDetails } = useContext(commonContext);
@@ -14,7 +15,7 @@ const CompanyDetailsForm = () => {
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/common/locations')
+    axios.get(`${BASEURL}/common/locations`)
       .then(response => {
         setLocations(response.data.map(location => ({ value: location, label: location })));
       })
@@ -41,7 +42,7 @@ const CompanyDetailsForm = () => {
 
   const handleFinish = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/company', {
+      const response = await fetch(`${BASEURL}/company`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

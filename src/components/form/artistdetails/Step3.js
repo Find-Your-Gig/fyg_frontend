@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
 import './ArtistDetailsForm.scss'; // Ensure this path is correct
+import { BASEURL } from '../../../util/Util';
 
 const Step3 = ({ formData, handleChange }) => {
   const [categories, setCategories] = useState({});
 
   useEffect(() => {
-    axios.post('http://localhost:8080/api/common/categories', formData.preferredGigs)
+    axios.post(`${BASEURL}/common/categories`, formData.preferredGigs)
       .then(response => {
         setCategories(response.data);
       })

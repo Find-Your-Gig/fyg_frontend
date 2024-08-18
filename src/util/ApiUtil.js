@@ -1,9 +1,10 @@
 import axios from "axios";
+import { BASEURL } from "./Util";
 
 export const fetchArtistDetails = async (userId) => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/artist/user/${userId}`
+        `${BASEURL}/artist/user/${userId}`
       );
       if (response.data.success) {
         return response.data.artists[0];
@@ -19,7 +20,7 @@ export const fetchArtistDetails = async (userId) => {
 
   export const fetchCompanyDetails = async (userId) => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/company/user/${userId}`);
+      const response = await axios.get(`${BASEURL}/company/user/${userId}`);
       if (response.data.success) {
         return response.data.companies[0];
       } else {

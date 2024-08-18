@@ -9,6 +9,7 @@ import filtersContext from '../contexts/filters/filtersContext';
 import EmptyView from '../components/common/EmptyView';
 import Loader from '../components/common/loader/Loader';
 import commonContext from '../contexts/common/commonContext';
+import { BASEURL } from '../util/Util';
 
 
 const AllProducts = () => {
@@ -24,7 +25,7 @@ const AllProducts = () => {
 
     const fetchAllArtists = async () => {
         try {
-          const response = await axios.get(`http://localhost:8080/api/artist`);
+          const response = await axios.get(`${BASEURL}/artist`);
             if (response.data.success) {
               setArtists(response.data.artists);
             } else {

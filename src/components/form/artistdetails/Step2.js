@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
 import './ArtistDetailsForm.scss'; // Ensure this path is correct
+import { BASEURL } from '../../../util/Util';
 
 const Step2 = ({ formData, handleChange }) => {
   const [preferredGigs, setPreferredGigs] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/api/common/gigs')
+    axios.get(`${BASEURL}/common/gigs`)
       .then(response => {
         setPreferredGigs(response.data.map(gig => ({ value: gig, label: gig })));
       })

@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Invitations.scss';
 import { useLocation } from 'react-router-dom';
 import commonContext from '../../contexts/common/commonContext';
+import { BASEURL } from '../../util/Util';
 
 const Invitations = () => {
   const { loginResponse } = useContext(commonContext);
@@ -18,7 +19,7 @@ const Invitations = () => {
 
   const fetchInvitations = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/invitation/user/${userIdParam}`);
+      const response = await axios.get(`${BASEURL}/invitation/user/${userIdParam}`);
       setInvitations(response.data.invitations);
     } catch (error) {
       console.error('Error fetching invitations:', error);
@@ -31,7 +32,7 @@ const Invitations = () => {
 
   const updateInvitationStatus = async (invitation, status) => {
     try {
-      await axios.post('http://localhost:8080/api/invitation/updateInvitation', {
+      await axios.post(`${BASEURL}/invitation/updateInvitation`, {
         userId: userIdParam,
         invitation: {
           ...invitation,

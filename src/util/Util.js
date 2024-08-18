@@ -9,3 +9,8 @@ export const isEmpty = (value) => {
  export const convertToTitleCase = (str) => {
     return str.toLowerCase().split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 }
+
+//frontend deployment baseurls
+const prod = "https://find-your-gig.github.io/fyg_frontend/"
+const local =  "http://localhost:8080/api"
+export const BASEURL = prod

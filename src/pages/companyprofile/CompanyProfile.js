@@ -7,6 +7,7 @@ import './CompanyProfile.scss';
 import commonContext from '../../contexts/common/commonContext';
 import Loader from '../../components/common/loader/Loader';
 import { useLocation } from 'react-router-dom';
+import { BASEURL } from '../../util/Util';
 const _ = require('lodash');
 
 const CompanyProfile = () => {
@@ -41,7 +42,7 @@ const CompanyProfile = () => {
 
   const fetchCompanyDetails = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/company/user/${loginResponse.userId}`);
+      const response = await axios.get(`${BASEURL}/company/user/${loginResponse.userId}`);
       if (response.data.success) {
         const companyData = response.data.companies[0];
         setFormData({
@@ -64,7 +65,7 @@ const CompanyProfile = () => {
 
   const fetchEditProfileFormData = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/company/editProfileFormData');
+      const response = await axios.get(`${BASEURL}/company/editProfileFormData`);
       if (response.data.success) {
         setLocations(response.data.locations.map(location => ({ value: location, label: location })));
       } else {
@@ -77,7 +78,7 @@ const CompanyProfile = () => {
 
   const saveCompanyDetails = async () => {
     try {
-      const response = await axios.put(`http://localhost:8080/api/company/${formData.companyId}`, formData);
+      const response = await axios.put(`${BASEURL}/company/${formData.companyId}`, formData);
       if (response.data.success) {
         const companyData = response.data.companies[0];
         setFormData({

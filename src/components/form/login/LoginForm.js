@@ -4,6 +4,7 @@ import commonContext from '../../../contexts/common/commonContext';
 import useForm from '../../../hooks/useForm';
 import useOutsideClose from '../../../hooks/useOutsideClose';
 import useScrollDisable from '../../../hooks/useScrollDisable';
+import { BASEURL } from '../../../util/Util';
 
 const LoginForm = () => {
     const { isFormOpen, toggleForm, setLoggedIn, setLoginResponse, loading, setLoading, setProfileData } = useContext(commonContext);
@@ -33,7 +34,7 @@ const LoginForm = () => {
         event.preventDefault();
         setErrorMessage(''); // Clear any previous error messages
 
-        const apiUrl = isSignupVisible ? 'http://localhost:8080/api/user/register' : 'http://localhost:8080/api/user/login';
+        const apiUrl = isSignupVisible ? `${BASEURL}/user/register` : `${BASEURL}/user/login`;
         const requestBody = isSignupVisible
             ? {
                   fullName: inputValues.username,

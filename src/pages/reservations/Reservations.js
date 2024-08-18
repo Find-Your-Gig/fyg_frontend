@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Reservations.scss';
 import { useLocation } from 'react-router-dom';
 import commonContext from '../../contexts/common/commonContext';
+import { BASEURL } from '../../util/Util';
 
 const Reservations = () => {
   const { loginResponse } = useContext(commonContext);
@@ -18,7 +19,7 @@ const Reservations = () => {
 
   const fetchReservations = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/reservation/user/${userIdParam}`);
+      const response = await axios.get(`${BASEURL}/reservation/user/${userIdParam}`);
       setReservations(response.data.reservations);
     } catch (error) {
       console.error('Error fetching reservations:', error);
@@ -36,7 +37,7 @@ const Reservations = () => {
 
   const handleCancel = async (reservation) => {
     try {
-      await axios.post(`http://localhost:8080/api/reservation/cancelReservation`, {
+      await axios.post(`${BASEURL}/reservation/cancelReservation`, {
         userId: userIdParam,
         reservation: {
           ...reservation,
