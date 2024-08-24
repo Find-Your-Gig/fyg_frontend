@@ -11,6 +11,6 @@ export const isEmpty = (value) => {
 }
 
 //frontend deployment baseurls
-const prod = "https://find-your-gig.github.io/fyg_frontend/"
+const prod = "https://findyourgig-2.onrender.com/api"
 const local =  "http://localhost:8080/api"
 export const BASEURL = prod
