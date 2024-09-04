@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import './ReservationForm.scss';
 import commonContext from '../../../contexts/common/commonContext';
+import { BASEURL } from '../../../util/Util';
 
 const ReservationForm = ({ show, handleClose }) => {
   const { companyDetails, artistDetails, loginResponse } = useContext(commonContext); // Assuming userId is available in the commonContext
@@ -51,7 +52,7 @@ const ReservationForm = ({ show, handleClose }) => {
     };
 
     try {
-      const response = await fetch('${BASEURL}/reservation/makeReservation', {
+      const response = await fetch(`${BASEURL}/reservation/makeReservation`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

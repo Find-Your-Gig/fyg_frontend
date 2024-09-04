@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineSearch, AiOutlineShoppingCart, AiOutlineUser, AiOutlineShop } from 'react-icons/ai';
 import { dropdownMenu } from '../../data/headerData';
+import { useNavigate } from 'react-router-dom';
 import commonContext from '../../contexts/common/commonContext';
 import cartContext from '../../contexts/cart/cartContext';
 import LoginForm from '../form/login/LoginForm';
@@ -10,9 +11,10 @@ import SearchBar from './SearchBar';
 
 const Header = () => {
 
-    const { formUserInfo, toggleForm, toggleSearch, isLoggedIn, setLoading, loginResponse } = useContext(commonContext);
+    const { formUserInfo, toggleForm, toggleSearch, isLoggedIn, setLoading, loginResponse, setLoggedIn, setFormUserInfo, setLoginResponse } = useContext(commonContext);
     const { cartItems } = useContext(cartContext);
     const [isSticky, setIsSticky] = useState(false);
+    const navigate = useNavigate();
 
 
     // handle the sticky-header
@@ -31,6 +33,13 @@ const Header = () => {
 
     const handleAllProducts = () => {
         setLoading(true);
+    }
+    
+    const handleSignOut = () => {
+        setLoggedIn(false);
+        setFormUserInfo('');
+        setLoginResponse({});
+        navigate('/');
     }
 
     return (
@@ -76,13 +85,20 @@ const Header = () => {
                                     <h4>Hello! {formUserInfo && <Link to="*">&nbsp;{formUserInfo}</Link>}</h4>
                                     <p>Access account and manage orders</p>
                                     {
-                                        !formUserInfo && !isLoggedIn && (
+                                        !formUserInfo && !isLoggedIn ? (
                                             <button
                                                 type="button"
                                                 onClick={() => toggleForm(true)}
                                             >
                                                 Login / Signup
                                             </button>
+                                        ) : (
+                                            <button
+                                            type="button"
+                                            onClick={() => handleSignOut()}
+                                            >
+                                                Sign Out
+                                            </button> 
                                         )
                                     }
                                     <div className="separator"></div>
