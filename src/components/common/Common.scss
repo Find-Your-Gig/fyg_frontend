@@ -1,0 +1,74 @@
+.bell_icon {
+    position: relative;
+    cursor: pointer;
+    font-size: 24px;
+  }
+  
+  .bell_icon .badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 7px;
+    font-size: 10px;
+    font-weight: bold;
+  }
+  
+  .notifications_dropdown {
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 300px;
+    top: 40px;
+    right: 0;
+    z-index: 10;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .notifications_dropdown h4 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .notifications_dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .notifications_dropdown li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    color: #666;
+    transition: background-color 0.2s ease;
+  }
+  
+  .notifications_dropdown li:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .notifications_dropdown li.seen {
+    color: #666;
+  }
+  
+  .notifications_dropdown li.unseen {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .notifications_dropdown li:last-child {
+    border-bottom: none;
+  }
+  
+  .notifications_dropdown .no_notifications {
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+  }
+  
