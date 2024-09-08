@@ -6,12 +6,12 @@ import { BASEURL } from '../../util/Util';
 import commonContext from '../../contexts/common/commonContext';
 import cartContext from '../../contexts/cart/cartContext';
 import LoginForm from '../form/login/LoginForm';
-import SearchBar from './SearchBar';
+import SearchBar from './searchbar/SearchBar';
 import axios from 'axios';
 import './Common.scss';
 
 const Header = () => {
-    const { formUserInfo, toggleForm, toggleSearch, isLoggedIn, setLoading, loginResponse, setLoggedIn, setFormUserInfo, setLoginResponse } = useContext(commonContext);
+    const { formUserInfo, toggleForm, isLoggedIn, setLoading, loginResponse, setLoggedIn, setFormUserInfo, setLoginResponse } = useContext(commonContext);
     const { cartItems } = useContext(cartContext);
     const [isSticky, setIsSticky] = useState(false);
     const [notifications, setNotifications] = useState([]);
@@ -112,14 +112,8 @@ const Header = () => {
                         <h2 className="nav_logo">
                             <Link to="/">FindYourGig</Link>
                         </h2>
+                        <SearchBar />
                         <nav className="nav_actions">
-                            <div className="search_action">
-                                <span onClick={() => toggleSearch(true)}>
-                                    <AiOutlineSearch />
-                                </span>
-                                <div className="tooltip">Search</div>
-                            </div>
-
                             <div className="vendors_action">
                                 <Link to="/all-products">
                                     <AiOutlineShop onClick={handleAllProducts} />
